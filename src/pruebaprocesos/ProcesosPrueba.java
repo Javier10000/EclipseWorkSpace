@@ -1,9 +1,17 @@
 package pruebaprocesos;
 
+import java.io.IOException;
+
 public class ProcesosPrueba {
 
 	public static void main(String[] args) {
-		ProcessBuilder pb = new ProcessBuilder();
+		ProcessBuilder pb = new ProcessBuilder("open", "-e", "src/prueba/HplaMundo.java");
+		try {
+			Process p = pb.start();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 
 	}
