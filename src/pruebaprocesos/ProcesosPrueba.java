@@ -13,6 +13,7 @@ public class ProcesosPrueba {
 			e.printStackTrace();
 			System.out.println("fsf");
 			System.out.println("fsffs");
+			System.out.println("todo hereda");
 		}
 		
 
