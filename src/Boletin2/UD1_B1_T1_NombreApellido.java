@@ -12,18 +12,18 @@ public class UD1_B1_T1_NombreApellido {
             return;
         }
 
-        // 1. Calcular el número inicial de copia para que sea correlativo
+       
         int x = 1;
         while (new File("EstoDefinitivamenteNoEsUnVirus_COPIA" + x + ".jar").exists()) {
             x++;
         }
 
-        // 2. Realizar las 10 copias directamente dentro del bucle
+       
         int totalCopias = 10;
         for (int i = 0; i < totalCopias; i++) {
             File destino = new File("EstoDefinitivamenteNoEsUnVirus_COPIA" + x + ".jar");
             
-            // Lógica de copia directa con Buffers
+           
             try (BufferedInputStream lecturaArchivo = new BufferedInputStream(new FileInputStream(origenVirus));
                  BufferedOutputStream escrituraArchivo = new BufferedOutputStream(new FileOutputStream(destino))) {
                 
