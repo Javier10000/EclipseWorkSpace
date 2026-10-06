@@ -2,7 +2,7 @@ package Boletin2;
 
 import java.io.*;
 
-public class UD1_B1_T1_NombreApellido {
+public class UD1_B2_T1_NombreApellido {
 
     public static void main(String[] args) {
         File origenVirus = new File("EstoDefinitivamenteNoEsUnVirus.jar");

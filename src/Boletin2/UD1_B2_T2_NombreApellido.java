@@ -5,63 +5,61 @@ import java.util.Scanner;
 
 public class UD1_B2_T2_NombreApellido {
 
-    public static void main(String[] args) {
-      
-        String ruta = "."; 
-        String nombreArchivo = "datos.dat";
+	public static void main(String[] args) {
+        // TODO Auto-generated method stub
 
-        System.out.println("=== 1. ESCRITURA EN EL FICHERO ===");
-        escribir(ruta, nombreArchivo);
+        String ruta = "src" + System.getProperty("file.separator") + "Boletin2" + System.getProperty("file.separator");
+        String nombre = "data.dat";
 
-        System.out.println("\n=== 2. LECTURA DEL FICHERO ===");
-        leer(ruta, nombreArchivo);
+        System.out.println("escritura: ");
+        escribir(ruta, nombre);
+
+        System.out.println("lectura: ");
+        leer(ruta, nombre);
     }
 
-   
-    public static void escribir(String ruta, String nombreArchivo) {
-        File archivo = new File(ruta, nombreArchivo);
-        
-        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(archivo));
-             Scanner scanner = new Scanner(System.in)) {
-            
-            System.out.println("Introduce números enteros. (Introduce cualquier letra o pulsa algo que no sea un número para terminar):");
-            
-            while (scanner.hasNextInt()) {
-                int numero = scanner.nextInt();
-                dos.writeInt(numero); 
-            }
-            System.out.println("¡Datos guardados correctamente en " + nombreArchivo + "!");
-            
-        } catch (IOException e) {
-            System.err.println("Error al escribir en el archivo: " + e.getMessage());
-        }
-    }
+    public static void leer(String ruta, String nombre) {
+        File fil = new File(ruta, nombre);
 
-    
-    public static void leer(String ruta, String nombreArchivo) {
-        File archivo = new File(ruta, nombreArchivo);
+        if (!fil.exists()) {
+            System.out.println("El archivo no existe.");
 
-        if (!archivo.exists()) {
-            System.out.println("El archivo " + nombreArchivo + " todavía no existe.");
-            return;
         }
 
-       
-        try (DataInputStream dis = new DataInputStream(new FileInputStream(archivo))) {
-            
-            System.out.println("Leyendo contenido de " + nombreArchivo + ":");
-            
-           
+        try {
+            DataInputStream dis = new DataInputStream(new FileInputStream(fil));
+
             while (true) {
-                int numeroLeido = dis.readInt(); 
-                System.out.println("Número leído: " + numeroLeido);
+                int num = dis.readInt();
+                System.out.println("Entero leido: " + num);
             }
-            
-        } catch (EOFException e) {
-            
-            System.out.println("-> Fin del archivo alcanzado (EOF). Lectura finalizada con éxito.");
+
+        } catch (EOFException ew) {
+            System.out.println("Fin del fichero alcanzado.");
         } catch (IOException e) {
-            System.err.println("Error al leer el archivo: " + e.getMessage());
+            System.out.println("Error al leer el archivo: " + e.getMessage());
         }
+
+    }
+
+    public static void escribir(String ruta, String nombre) {
+        Scanner sc = new Scanner(System.in);
+        File fil = new File(ruta, nombre);
+
+        if (!fil.exists()) {
+            System.out.println("El archivo no existe.");
+
+        }
+
+        try {
+            DataOutputStream dis = new DataOutputStream(new FileOutputStream(fil));
+            System.out.println("Introduce un numero: ");
+            int num = sc.nextInt();
+            dis.writeInt(num);
+
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo: " + e.getMessage());
+        }
+
     }
 }
