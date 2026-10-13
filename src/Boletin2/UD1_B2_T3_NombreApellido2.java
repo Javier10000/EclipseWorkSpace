@@ -1,4 +1,4 @@
-package Boletin2;
+package boletin2;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class UD1_B2_T3_NombreApellido2 {
 
     public static void main(String[] args) {
-        String ruta = "src"+System.getProperty("file.separator")+"Boletin2"+System.getProperty("file.separator"); 
+        String ruta = "src"+System.getProperty("file.separator")+"boletin2"+System.getProperty("file.separator"); 
         String nombreArchivo = "datosMatriz.dat";
 
       

@@ -1,4 +1,4 @@
-package tarea1;
+package boletin1;
 
 public class UD1_B1_T1_Javier_Verdugo_Mena {
 

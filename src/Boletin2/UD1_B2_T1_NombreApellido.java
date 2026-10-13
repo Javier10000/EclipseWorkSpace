@@ -1,4 +1,4 @@
-package Boletin2;
+package boletin2;
 
 import java.io.*;
 

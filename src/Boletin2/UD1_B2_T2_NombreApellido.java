@@ -1,4 +1,4 @@
-package Boletin2;
+package boletin2;
 
 import java.io.*;
 import java.util.Scanner;
@@ -8,7 +8,7 @@ public class UD1_B2_T2_NombreApellido {
 	public static void main(String[] args) {
         // TODO Auto-generated method stub
 
-        String ruta = "src" + System.getProperty("file.separator") + "Boletin2" + System.getProperty("file.separator");
+        String ruta = "src" + System.getProperty("file.separator") + "boletin2" + System.getProperty("file.separator");
         String nombre = "data.dat";
 
         System.out.println("escritura: ");
