@@ -27,11 +27,16 @@ public class UD1_B4_T1_JavierVerdugo {
 
 				System.out.println("        PELICULA " + i + "      ");
 
-				System.out.println("Título: " + peli.getElementsByTagName("Titulo").item(0).getTextContent());
+				System.out.print("Título: " + peli.getElementsByTagName("Titulo").item(0).getTextContent());
+				System.out.println();
 
-				System.out.println("Fecha: " + peli.getElementsByTagName("Fecha").item(0).getTextContent());
+				System.out.print("Fecha: " + peli.getElementsByTagName("Fecha").item(0).getTextContent());
+				System.out.println();
 
-				System.out.println("Director: " + peli.getElementsByTagName("Director").item(0).getTextContent());
+				System.out.print("Director: " + peli.getElementsByTagName("Director").item(0).getTextContent());
+				System.out.println();
+				
+				System.out.print("actores: " + peli.getElementsByTagName("Actores").item(0).getTextContent());
 
 			}
 
